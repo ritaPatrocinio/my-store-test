@@ -51,25 +51,67 @@
         "template--19539475595588__a101077d-9fb6-4f19-ac01-f3b37e3b5ab4-featured_collection-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "beers"
+            "collection": "cables"
           }
         },
         "template--19539475595588__a101077d-9fb6-4f19-ac01-f3b37e3b5ab4-featured_collection-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "shirts"
+            "collection": "chargers"
           }
         },
         "template--19539475595588__a101077d-9fb6-4f19-ac01-f3b37e3b5ab4-featured_collection-3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "stickers"
+            "collection": "controllers"
           }
         },
         "1a4bcd78-d263-46d7-bdc3-e73b436e0c73": {
           "type": "featured_collection",
           "settings": {
-            "collection": "5-or-less"
+            "collection": "mobile"
+          }
+        },
+        "e1f69e64-00ee-4829-9eec-f14fa46f09f6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "pc-mac"
+          }
+        },
+        "62940366-14ae-4ba6-971e-f9abc55e7975": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "batteries"
+          }
+        },
+        "3de21c5d-2eec-4ce1-8275-865041cfab8b": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "memory-cards"
+          }
+        },
+        "50b6be6e-a85c-4596-b065-0acdcff82582": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "styluses"
+          }
+        },
+        "f2bf3b9e-4e90-4382-b757-26dca7920717": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "repair-parts"
+          }
+        },
+        "a1aff206-5030-4f25-8d04-a9a230f4ce2f": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bundles"
+          }
+        },
+        "d7059adb-f1da-4418-91fb-4a81154b67ae": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "retro"
           }
         },
         "655d4762-6d28-47fc-91cb-b3b09fdb38b4": {
@@ -84,6 +126,13 @@
         "template--19539475595588__a101077d-9fb6-4f19-ac01-f3b37e3b5ab4-featured_collection-2",
         "template--19539475595588__a101077d-9fb6-4f19-ac01-f3b37e3b5ab4-featured_collection-3",
         "1a4bcd78-d263-46d7-bdc3-e73b436e0c73",
+        "e1f69e64-00ee-4829-9eec-f14fa46f09f6",
+        "62940366-14ae-4ba6-971e-f9abc55e7975",
+        "3de21c5d-2eec-4ce1-8275-865041cfab8b",
+        "50b6be6e-a85c-4596-b065-0acdcff82582",
+        "f2bf3b9e-4e90-4382-b757-26dca7920717",
+        "a1aff206-5030-4f25-8d04-a9a230f4ce2f",
+        "d7059adb-f1da-4418-91fb-4a81154b67ae",
         "655d4762-6d28-47fc-91cb-b3b09fdb38b4"
       ],
       "settings": {
