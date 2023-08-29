@@ -12,25 +12,17 @@
             "menu": "footer"
           }
         },
-        "132d8123-1b0f-40a6-ba55-764d8ad9366e": {
-          "type": "link_list",
+        "ffd10f98-c699-45cc-85a5-4a7a69a83799": {
+          "type": "text",
           "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
-          }
-        },
-        "a4bab0ff-e9af-4230-9b1c-e695749009df": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": "footer"
+            "heading": "Follow Us",
+            "subtext": ""
           }
         }
       },
       "block_order": [
         "e46804f9-ee81-4447-94de-add5bc49e8fe",
-        "132d8123-1b0f-40a6-ba55-764d8ad9366e",
-        "a4bab0ff-e9af-4230-9b1c-e695749009df"
+        "ffd10f98-c699-45cc-85a5-4a7a69a83799"
       ],
       "settings": {
         "color_scheme": "background-1",
