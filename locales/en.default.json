@@ -244,7 +244,7 @@
     },
     "contact": {
       "form": {
-        "title": "Contact form",
+        "title": "Contact",
         "name": "Name",
         "email": "Email",
         "phone": "Phone number",

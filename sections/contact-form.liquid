@@ -2,15 +2,29 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}
+    px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
+    px;
   }
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: {{ section.settings.padding_top }}
+      px;
+      padding-bottom: {{ section.settings.padding_bottom }}
+      px;
     }
+  }
+  .contact-inner-box {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+
+  .contact-box {
+    display: flex;
+    flex-wrap: wrap
   }
 {%- endstyle -%}
 
@@ -31,13 +45,20 @@
     -%}
     {%- form 'contact', id: 'ContactForm', class: contact_form_class -%}
       {%- if form.posted_successfully? -%}
-        <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>
+        <h2
+          class="form-status form-status-list form__message"
+          tabindex="-1"
+          autofocus>
           {% render 'icon-success' %}
           {{ 'templates.contact.form.post_success' | t }}
         </h2>
       {%- elsif form.errors -%}
         <div class="form__message">
-          <h2 class="form-status caption-large text-body" role="alert" tabindex="-1" autofocus>
+          <h2
+            class="form-status caption-large text-body"
+            role="alert"
+            tabindex="-1"
+            autofocus>
             {% render 'icon-error' %}
             {{ 'templates.contact.form.error_heading' | t }}
           </h2>
@@ -51,64 +72,52 @@
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields">
-        <div class="field">
-          <input
-            class="field__input"
-            autocomplete="name"
-            type="text"
-            id="ContactForm-name"
-            name="contact[{{ 'templates.contact.form.name' | t }}]"
-            value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
-            placeholder="{{ 'templates.contact.form.name' | t }}"
-          >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
-        </div>
-        <div class="field field--with-error">
-          <input
-            autocomplete="email"
-            type="email"
-            id="ContactForm-email"
-            class="field__input"
-            name="contact[email]"
-            spellcheck="false"
-            autocapitalize="off"
-            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
-            aria-required="true"
-            {% if form.errors contains 'email' %}
-              aria-invalid="true"
-              aria-describedby="ContactForm-email-error"
-            {% endif %}
-            placeholder="{{ 'templates.contact.form.email' | t }}"
-          >
-          <label class="field__label" for="ContactForm-email">
-            {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
-          >
-          {%- if form.errors contains 'email' -%}
-            <small class="contact__field-error" id="ContactForm-email-error">
-              <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
-              <span class="form__message">
-                {%- render 'icon-error' -%}
-                {{- form.errors.translated_fields.email | capitalize }}
-                {{ form.errors.messages.email -}}
-              </span>
-            </small>
-          {%- endif -%}
-        </div>
-      </div>
+
+      <p>
+        {{ section.settings.contact_info }}
+      </p>
+
       <div class="field">
         <input
-          type="tel"
-          id="ContactForm-phone"
           class="field__input"
-          autocomplete="tel"
-          name="contact[{{ 'templates.contact.form.phone' | t }}]"
-          pattern="[0-9\-]*"
-          value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}"
-          placeholder="{{ 'templates.contact.form.phone' | t }}"
-        >
-        <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
+          autocomplete="name"
+          type="text"
+          id="ContactForm-name"
+          name="contact[{{ 'templates.contact.form.name' | t }}]"
+          value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
+          placeholder="{{ 'templates.contact.form.name' | t }}">
+        <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+      </div>
+      <div class="field field--with-error">
+        <input
+          autocomplete="email"
+          type="email"
+          id="ContactForm-email"
+          class="field__input"
+          name="contact[email]"
+          spellcheck="false"
+          autocapitalize="off"
+          value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+          aria-required="true"
+          {% if form.errors contains 'email' %}
+          aria-invalid="true"
+          aria-describedby="ContactForm-email-error"
+          {% endif %}
+          placeholder="{{ 'templates.contact.form.email' | t }}">
+        <label class="field__label" for="ContactForm-email">
+          {{- 'templates.contact.form.email' | t }}
+          <span aria-hidden="true">*</span>
+        </label>
+        {%- if form.errors contains 'email' -%}
+          <small class="contact__field-error" id="ContactForm-email-error">
+            <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
+            <span class="form__message">
+              {%- render 'icon-error' -%}
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </span>
+          </small>
+        {%- endif -%}
       </div>
       <div class="field">
         <textarea
@@ -116,8 +125,7 @@
           id="ContactForm-body"
           class="text-area field__input"
           name="contact[{{ 'templates.contact.form.comment' | t }}]"
-          placeholder="{{ 'templates.contact.form.comment' | t }}"
-        >
+          placeholder="{{ 'templates.contact.form.comment' | t }}">
           {{- form.body -}}
         </textarea>
         <label class="form__label field__label" for="ContactForm-body">
@@ -131,78 +139,195 @@
       </div>
     {%- endform -%}
   </div>
+  <div class="contact-company-info">
+    <ul>
+      <li>
+        <h3>Email</h3>
+        <div class="contact-box">
+          <div class="contact-inner-box">
+            <span>For Sales Inquiries</span>
+            <a>{{ section.settings.sales_inquiry }}</a>
+          </div>
+          <div class="contact-inner-box">
+            <span>For Product Support</span>
+            <a>{{ section.settings.prod_support }}</a>
+          </div>
+          <div class="contact-inner-box">
+            <span>For Wholesale Inquiries</span>
+            <a>{{ section.settings.wholesale_inquiry }}</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <h3>CUSTOMER SERVICE</h3>
+        <div class="contact-box">
+          <div class="contact-inner-box">
+            <span>Phone</span>
+            <a>{{ section.settings.service_phone }}</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <h3>CONTACT TIMES</h3>
+        <div class="contact-box">
+          <div class="contact-inner-box">
+            <span>Business Hours</span>
+            <a>{{ section.settings.business_hours }}</a>
+          </div>
+          <div class="contact-inner-box">
+            <span></span>
+            <a>{{ section.settings.prod_support }}</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <h3>BUSINESS ADDRESS</h3>
+        <div class="contact-box">
+          <div class="contact-inner-box">
+            <a>{{ section.settings.business_address }}</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 
 {% schema %}
-{
-  "name": "t:sections.contact-form.name",
-  "tag": "section",
-  "class": "section",
-  "disabled_on": {
-    "groups": ["header", "footer"]
-  },
-  "settings": [
-    {
-      "type": "inline_richtext",
-      "id": "heading",
-      "default": "Contact form",
-      "label": "Heading"
+  {
+    "name": "t:sections.contact-form.name",
+    "tag": "section",
+    "class": "section",
+    "disabled_on": {
+      "groups": ["header", "footer"]
     },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        }
-      ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
-    },
-    {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "t:sections.all.colors.label",
-      "default": "background-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.all.padding.section_padding_heading"
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
-      "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
-      "default": 36
-    }
-  ],
-  "presets": [
-    {
-      "name": "t:sections.contact-form.presets.name"
-    }
-  ]
-}
+    "settings": [
+      {
+        "type": "inline_richtext",
+        "id": "heading",
+        "default": "Contact form",
+        "label": "Heading"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+          {
+            "value": "h2",
+            "label": "t:sections.all.heading_size.options__1.label"
+          }, {
+            "value": "h1",
+            "label": "t:sections.all.heading_size.options__2.label"
+          }, {
+            "value": "h0",
+            "label": "t:sections.all.heading_size.options__3.label"
+          }
+        ],
+        "default": "h1",
+        "label": "t:sections.all.heading_size.label"
+      },
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "background-1"
+      },
+      {
+        "type": "header",
+        "content": "t:sections.all.padding.section_padding_heading"
+      }, {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_top",
+        "default": 36
+      }, {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "t:sections.all.padding.padding_bottom",
+        "default": 36
+      }, {
+        "type": "header",
+        "content": "Banner image"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Get in touch"
+      }, {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subheading",
+        "default": "Subheading"
+      }, {
+        "type": "header",
+        "content": "Form"
+      }, {
+        "type": "richtext",
+        "id": "form_content",
+        "label": "Content"
+      }, {
+        "type": "richtext",
+        "id": "contact_info",
+        "label": "Contact Text"
+      }, {
+        "type": "header",
+        "content": "Email"
+      }, {
+        "type": "text",
+        "id": "sales_inquiry",
+        "label": "Sales Inquiry Email"
+      }, {
+        "type": "text",
+        "id": "prod_support",
+        "label": "Product Support Email"
+      }, {
+        "type": "text",
+        "id": "wholesale_inquiry",
+        "label": "Wholesale Inquiry Email"
+      }, {
+        "type": "header",
+        "content": "Customer Service"
+      }, {
+        "type": "text",
+        "id": "service_phone",
+        "label": "Add Service Phone no.",
+        "default": "(909)647-7826"
+      }, {
+        "type": "text",
+        "id": "service_fax",
+        "label": "Add Service Fax no.",
+        "default": "(909)647-7834"
+      }, {
+        "type": "header",
+        "content": "Contact Times"
+      }, {
+        "type": "richtext",
+        "id": "business_hours",
+        "label": "Business Hours"
+      }, {
+        "type": "richtext",
+        "id": "tech_support",
+        "label": "Tech Support Hours"
+      }, {
+        "type": "header",
+        "content": "Business Address"
+      }, {
+        "type": "richtext",
+        "id": "business_address",
+        "label": "Add Business Address"
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.contact-form.presets.name"
+      }
+    ]
+  }
 {% endschema %}

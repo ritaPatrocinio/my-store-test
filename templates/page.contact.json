@@ -2,6 +2,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 36,
         "padding_bottom": 36
@@ -10,16 +11,177 @@
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "",
+        "heading": "Contact Us",
         "heading_size": "h1",
         "color_scheme": "background-1",
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 36,
+        "title": "Get in touch",
+        "subtitle": "Subheading",
+        "form_content": "",
+        "contact_info": "<p>For any questions regarding your order please complete the form below, or email us at <a href=\"mailto:sales@xyab.comTypography\" target=\"_blank\" title=\"sales@xyab.comTypography\">sales@xyab.com<\/a>.<\/p>",
+        "sales_inquiry": "sales@xyab.com",
+        "prod_support": "support@xyab.com",
+        "wholesale_inquiry": "partner@xyab.com",
+        "service_phone": "1 (888) 218-9610",
+        "service_fax": "",
+        "business_hours": "<p>Monday to Friday 9:00 AM to 5:00 PM EST<\/p>",
+        "tech_support": "<p>Monday to Friday 9:00 AM to 3:00 PM EST<\/p>",
+        "business_address": "<p>4566 Spring Road<br\/>Brooklyn Heights, Ohio 44131<\/p>"
+      }
+    },
+    "b472896c-0ba7-4b83-859a-6b848b62c60f": {
+      "type": "rich-text",
+      "blocks": {
+        "template--20821261779252__b472896c-0ba7-4b83-859a-6b848b62c60f-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "EMAIL",
+            "heading_size": "h2"
+          }
+        },
+        "template--20821261779252__b472896c-0ba7-4b83-859a-6b848b62c60f-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For Sales Inquiries<\/p><p><a href=\"mailto:sales@xyab.com\"><strong>sales@xyab.com<\/strong><\/a><\/p>"
+          }
+        },
+        "12f7a319-23e2-4e9d-8409-2d046c56b2ea": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For Product Support<\/p><p><a href=\"mailto:support@xyab.com\"><strong>support@xyab.com<\/strong><\/a><\/p>"
+          }
+        },
+        "c2aafae6-598e-4751-b11f-3c066a57ef37": {
+          "type": "text",
+          "settings": {
+            "text": "<p>For Wholesale Inquiries<\/p><p><a href=\"mailto:partner@xyab.com\"><strong>partner@xyab.com<\/strong><\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--20821261779252__b472896c-0ba7-4b83-859a-6b848b62c60f-heading-1",
+        "template--20821261779252__b472896c-0ba7-4b83-859a-6b848b62c60f-text-1",
+        "12f7a319-23e2-4e9d-8409-2d046c56b2ea",
+        "c2aafae6-598e-4751-b11f-3c066a57ef37"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "4009b212-111e-4380-9522-a9b0a8bec983": {
+      "type": "rich-text",
+      "blocks": {
+        "6f9f57ec-1857-454e-ad80-e6a1184bf1f9": {
+          "type": "heading",
+          "settings": {
+            "heading": "CUSTOMER SERVICE",
+            "heading_size": "h2"
+          }
+        },
+        "28904cb5-5cab-4ea7-b1e9-59d648f80b00": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Phone<\/p><p><a href=\"tel:1 888 2189610\"><strong>1 (888) 218-9610<\/strong><\/a><\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "6f9f57ec-1857-454e-ad80-e6a1184bf1f9",
+        "28904cb5-5cab-4ea7-b1e9-59d648f80b00"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "65f71d1c-f412-4fe5-bb11-ac82a5f5d13b": {
+      "type": "rich-text",
+      "blocks": {
+        "98823f4a-b845-4976-9842-bc88024a0146": {
+          "type": "heading",
+          "settings": {
+            "heading": "CONTACT TIMES",
+            "heading_size": "h2"
+          }
+        },
+        "a5913c83-ad9c-4b43-b842-608112b7635a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Business Hours<\/p><p>Monday to Friday 9:00 AM to 5:00 PM EST<\/p>"
+          }
+        },
+        "1036eb68-4f76-4325-a345-c389b9626ff6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Tech Support Hours<\/p><p>Monday to Friday 9:00 AM to 3:00 PM EST<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "98823f4a-b845-4976-9842-bc88024a0146",
+        "a5913c83-ad9c-4b43-b842-608112b7635a",
+        "1036eb68-4f76-4325-a345-c389b9626ff6"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "2609f8b4-b531-42d3-817d-5fb5a826328d": {
+      "type": "rich-text",
+      "blocks": {
+        "236b9998-d1b8-4a55-8518-8cf9ed50bd57": {
+          "type": "heading",
+          "settings": {
+            "heading": "BUSINESS ADDRESS",
+            "heading_size": "h2"
+          }
+        },
+        "e15efdaa-ae2c-4c4e-a4d8-defdde2d1b9d": {
+          "type": "text",
+          "settings": {
+            "text": "<p>4566 Spring Road<br\/>Brooklyn Heights, Ohio 44131<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "236b9998-d1b8-4a55-8518-8cf9ed50bd57",
+        "e15efdaa-ae2c-4c4e-a4d8-defdde2d1b9d"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "main",
-    "form"
+    "form",
+    "b472896c-0ba7-4b83-859a-6b848b62c60f",
+    "4009b212-111e-4380-9522-a9b0a8bec983",
+    "65f71d1c-f412-4fe5-bb11-ac82a5f5d13b",
+    "2609f8b4-b531-42d3-817d-5fb5a826328d"
   ]
 }
