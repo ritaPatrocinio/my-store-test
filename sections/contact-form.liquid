@@ -6,6 +6,8 @@
     px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}
     px;
+    max-width: 50%;
+    padding: 2%;
   }
 
   @media screen and (min-width: 750px) {
@@ -26,10 +28,24 @@
     display: flex;
     flex-wrap: wrap
   }
+  .contact-container {
+    display: flex;
+    margin: 5%;
+    background-color: #F5F5F7;
+    padding: 4%;
+  }
+
+  .contact-left {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    padding-right: 8%;
+  }
+  .contact-right {
+    padding-left: 4%;
+  }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+<div class="color-{{ section.settings.color_scheme }} gradient contact-container">
+  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding contact-left">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         {{ section.settings.heading }}
@@ -133,13 +149,16 @@
         </label>
       </div>
       <div class="contact__button">
-        <button type="submit" class="button">
+        <button
+          type="submit"
+          class="button"
+          style="width: 100%;">
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
     {%- endform -%}
   </div>
-  <div class="contact-company-info">
+  <div id="contact-company-info" class="contact page-width page-width--narrow section-{{ section.id }}-padding contact-right">
     <ul>
       <li>
         <h3>Email</h3>
